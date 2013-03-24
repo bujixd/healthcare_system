@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Clinic xmlns:tns="http://www.example.org/shema/clinic" xmlns:tns1="http://www.example.org/schema/clinic/patient" xmlns:tns2="http://www.example.org/schema/clinic/clinic_ids" xmlns:tns3="http://www.example.org/schema/clinic/treament" xmlns:tns4="http://www.example.org/schema/clinic/provider" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/shema/clinic Clinic.xsd ">
+	<tns1:Patient>
+		<tns1:patient-id>0</tns1:patient-id>
+		<tns1:name>zhichen dai</tns1:name>
+		<tns1:dob>2001-01-01</tns1:dob>
+		<tns1:Treatment>
+			<tns1:treatment>
+				<tns3:provide-id>0</tns3:provide-id>
+				<tns3:diagnosis>flu</tns3:diagnosis>
+				<tns3:drug-treatment>
+					<tns3:name>flu</tns3:name>
+					<tns3:dosage>0.0</tns3:dosage>
+				</tns3:drug-treatment>
+			</tns1:treatment></tns1:Treatment>
+	</tns1:Patient>
+	<tns1:Patient>
+		<tns1:patient-id>1</tns1:patient-id>
+		<tns1:name>haoyu wang</tns1:name>
+		<tns1:dob>2001-01-01</tns1:dob>
+		<tns1:Treatment>
+			<tns1:treatment>
+				<tns3:provide-id>0</tns3:provide-id>
+				<tns3:diagnosis>flu</tns3:diagnosis>
+				<tns3:radiology>
+					<tns3:date>2001-01-01</tns3:date>
+				</tns3:radiology>
+				
+			</tns1:treatment></tns1:Treatment>
+	</tns1:Patient>
+	<tns1:Patient>
+		<tns1:patient-id>2</tns1:patient-id>
+		<tns1:name>chen qu</tns1:name>
+		<tns1:dob>2001-01-01</tns1:dob>
+		<tns1:Treatment>
+			<tns1:treatment>
+				<tns3:provide-id>0</tns3:provide-id>
+				<tns3:diagnosis>flu</tns3:diagnosis>
+				<tns3:surgery>
+					<tns3:date>2001-01-01</tns3:date>
+				</tns3:surgery>
+				
+				
+			</tns1:treatment></tns1:Treatment>
+	</tns1:Patient>
+	<tns4:Provider>
+		<tns4:provider-id>0</tns4:provider-id>
+		<tns4:name>james</tns4:name>
+		<tns4:specialization>surgery</tns4:specialization>
+	</tns4:Provider>
+	<tns4:Provider>
+		<tns4:provider-id>1</tns4:provider-id>
+		<tns4:name>tony</tns4:name>
+		<tns4:specialization>raidology</tns4:specialization>
+	</tns4:Provider>
+	<tns4:Provider>
+		<tns4:provider-id>2</tns4:provider-id>
+		<tns4:name>andy</tns4:name>
+		<tns4:specialization>oncology</tns4:specialization>
+	</tns4:Provider></tns:Clinic>

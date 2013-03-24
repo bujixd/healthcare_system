@@ -1,0 +1,5 @@
+patient siteInfo
+patient getPatientByPatId 12345678
+patient getPatientByDbId 1
+patient getPatientByNameDob Joe.Bloggs 1995-03-21
+patient addSurgery 1 12345678 flu 2001-11-11

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://cs548.stevens.edu/clinic/service/web/rest/data"
+	jaxb:version="2.0" elementFormDefault="qualified" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cs548.stevens.edu/clinic/service/web/rest/data"
+	xmlns:dap="http://cs548.stevens.edu/clinic/service/wed/rest/data/dap">
+
+	<import schemaLocation="LinkType.xsd"
+		namespace="http://cs548.stevens.edu/clinic/service/wed/rest/data/dap"></import>
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings>
+				<jaxb:javaType name="java.util.Date" xmlType="date"
+					parseMethod="edu.stevens.cs548.clinic.service.web.rest.DateAdapter.parseDate"
+					printMethod="edu.stevens.cs548.clinic.service.web.rest.DateAdapter.printDate" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+
+	<complexType name="TreatmentType">
+		<annotation>
+			<appinfo>
+				<jaxb:class implClass="edu.stevens.cs548.clinic.service.web.rest.TreatmentRepresentation" />
+			</appinfo>
+		</annotation>
+		<sequence>
+			<element name="patient" type="dap:LinkType"></element>
+			<element name="provider" type="dap:LinkType"></element>
+			<element name="diagnosis" type="string"></element>
+			<choice>
+				<element name="drug-treatment" type="tns:DrugTreatmentType">
+				</element>
+				<element name="radiology" type="tns:RadiologyType"></element>
+				<element name="surgery" type="tns:SurgeryType"></element>
+			</choice>
+		</sequence>
+	</complexType>
+
+	<element name="Treatment-rep" type="tns:TreatmentType" />
+
+
+	<complexType name="DrugTreatmentType">
+		<sequence>
+			<element name="name" type="string"></element>
+			<element name="dosage" type="float"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="RadiologyType">
+		<sequence>
+			<element name="date" type="date" minOccurs="1" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="SurgeryType">
+		<sequence>
+			<element name="date" type="date"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="patientType">
+		<annotation>
+			<appinfo>
+				<jaxb:class implClass="edu.stevens.cs548.clinic.service.web.rest.PatientRepresentation" />
+			</appinfo>
+		</annotation>
+		<sequence>
+			<element name="id" type="long" />
+			<element name="patient-id" type="long" />
+			<element name="name" type="string" />
+			<element name="dob" type="date" />
+			<element name="treatments" type="dap:LinkType" nillable="true"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+    <element name="Patient-rep" type="tns:patientType"></element>
+    
+    <complexType name="ProviderType">
+    <sequence>
+      <element name="id" type="long"/>
+      <element name="npi" type="long"/>
+      <element name="name" type="string"/>
+      <element name="specilization" type="tns:specialization" minOccurs="0"/>
+      <element name="treatments" type="dap:LinkType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <simpleType name="specialization">
+    <restriction base="string">
+      <enumeration value="surgery"/>
+      <enumeration value="radiology"/>
+      <enumeration value="oncology"/>
+    </restriction>
+  </simpleType>
+  
+  <element name="Provider-rep" type="tns:ProviderType"></element>
+</schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Clinic xmlns:tns="http://www.example.org/shema/clinic" xmlns:tns1="http://www.example.org/schema/clinic/patient" xmlns:tns2="http://www.example.org/schema/clinic/treament" xmlns:tns3="http://www.example.org/schema/clinic/clinic_ids" xmlns:tns4="http://www.example.org/schema/clinic/provider" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/shema/clinic Clinic.xsd ">
+	<tns1:Patient>
+		<tns1:patient-id>0</tns1:patient-id>
+		<tns1:name>zhichen dai</tns1:name>
+		<tns1:dob>2001-01-01</tns1:dob>
+		<tns1:Treatment>
+			<tns1:drugtreatment>
+				<tns2:provide-id>0</tns2:provide-id>
+				<tns2:diagnosis>flu</tns2:diagnosis>
+				<tns2:name>flu</tns2:name>
+				<tns2:dosage>0.0</tns2:dosage>
+			</tns1:drugtreatment></tns1:Treatment>
+	</tns1:Patient>
+	<tns1:Patient>
+		<tns1:patient-id>1</tns1:patient-id>
+		<tns1:name>haoyu wang</tns1:name>
+		<tns1:dob>2001-01-01</tns1:dob>
+		<tns1:Treatment>
+			<tns1:radiology>
+				<tns2:provide-id>1</tns2:provide-id>
+				<tns2:diagnosis>flu</tns2:diagnosis>
+				<tns2:date>2001-01-01</tns2:date>
+			</tns1:radiology></tns1:Treatment>
+	</tns1:Patient>
+	<tns1:Patient>
+		<tns1:patient-id>2</tns1:patient-id>
+		<tns1:name>chen qu</tns1:name>
+		<tns1:dob>2001-01-01</tns1:dob>
+		<tns1:Treatment>
+			<tns1:surgery>
+				<tns2:provide-id>2</tns2:provide-id>
+				<tns2:diagnosis>flu</tns2:diagnosis>
+				<tns2:date>2001-01-01</tns2:date>
+			</tns1:surgery></tns1:Treatment>
+	</tns1:Patient>
+	<tns4:Provider>
+		<tns4:provider-id>0</tns4:provider-id>
+		<tns4:name>james</tns4:name>
+		<tns4:specialization>raidology</tns4:specialization>
+	</tns4:Provider>
+	<tns4:Provider>
+		<tns4:provider-id>0</tns4:provider-id>
+		<tns4:name>tony</tns4:name>
+		<tns4:specialization>surgery</tns4:specialization>
+	</tns4:Provider>
+	<tns4:Provider>
+		<tns4:provider-id>0</tns4:provider-id>
+		<tns4:name>andy</tns4:name>
+		<tns4:specialization>oncology</tns4:specialization>
+	</tns4:Provider></tns:Clinic>

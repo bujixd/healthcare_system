@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clin:Clinic xmlns:cids="http://www.example.org/schema/clinic/clinic_ids"
+	xmlns:clin="http://www.example.org/shema/clinic" 
+	xmlns:pat="http://www.example.org/schema/clinic/patient"
+	xmlns:prov="http://www.example.org/schema/clinic/provider" 
+	xmlns:trmt="http://www.example.org/schema/clinic/treament"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/shema/clinic Clinic.xsd ">
+	<pat:Patient>
+		<pat:patient-id>12345678</pat:patient-id>
+		<pat:name>haoyu wang</pat:name>
+		<pat:dob>1991-01-01</pat:dob>
+		<pat:Treatment>
+			<pat:treatment>
+				<trmt:provide-id>67856453</trmt:provide-id>
+				<trmt:diagnosis>mlgrain</trmt:diagnosis>
+				<trmt:drug-treatment>
+					<trmt:name>relpax</trmt:name>
+					<trmt:dosage>35.0</trmt:dosage>
+				</trmt:drug-treatment>
+			</pat:treatment>
+		</pat:Treatment>
+	</pat:Patient>
+	<pat:Patient>
+		<pat:patient-id>87654321</pat:patient-id>
+		<pat:name>cheng qu</pat:name>
+		<pat:dob>1989-01-01</pat:dob>
+		<pat:Treatment>
+			<pat:treatment>
+				<trmt:provide-id>678656545</trmt:provide-id>
+				<trmt:diagnosis>hiv</trmt:diagnosis>
+				<trmt:drug-treatment>
+					<trmt:name>hiv</trmt:name>
+					<trmt:dosage>34.0</trmt:dosage>
+				</trmt:drug-treatment>
+				
+				
+			</pat:treatment></pat:Treatment>
+	</pat:Patient>
+	<pat:Patient>
+		<pat:patient-id>98765432</pat:patient-id>
+		<pat:name>du du</pat:name>
+		<pat:dob>1990-01-01</pat:dob>
+		<pat:Treatment>
+			<pat:treatment>
+				<trmt:provide-id>78956739</trmt:provide-id>
+				<trmt:diagnosis>hiv</trmt:diagnosis>
+				<trmt:drug-treatment>
+					<trmt:name>hiv</trmt:name>
+					<trmt:dosage>30.0</trmt:dosage>
+				</trmt:drug-treatment>
+				
+				
+			</pat:treatment>
+			<pat:treatment>
+				<trmt:provide-id>32421578</trmt:provide-id>
+				<trmt:diagnosis>trmt:diagnosis</trmt:diagnosis>
+				<trmt:radiology>
+					
+					<trmt:date>2001-01-01</trmt:date><trmt:date>1999-01-01</trmt:date>
+				</trmt:radiology>
+				
+			</pat:treatment>
+			</pat:Treatment>
+	</pat:Patient>
+	<pat:Patient>
+		<pat:patient-id>56781234</pat:patient-id>
+		<pat:name>qi qi</pat:name>
+		<pat:dob>1992-01-01</pat:dob>
+		<pat:Treatment>
+			<pat:treatment>
+				<trmt:provide-id>67856453</trmt:provide-id>
+				<trmt:diagnosis>appendicitis</trmt:diagnosis>
+				<trmt:surgery>
+					<trmt:date>2001-01-01</trmt:date>
+				</trmt:surgery>
+				
+			</pat:treatment></pat:Treatment>
+	</pat:Patient>
+	<prov:Provider>
+		<prov:provider-id>67856453</prov:provider-id>
+		<prov:name>xiang li</prov:name>
+		<prov:specialization>surgery</prov:specialization>
+	</prov:Provider>
+	<prov:Provider>
+		<prov:provider-id>32421578</prov:provider-id>
+		<prov:name>jiang yang</prov:name>
+		<prov:specialization>raidology</prov:specialization>
+	</prov:Provider></clin:Clinic>

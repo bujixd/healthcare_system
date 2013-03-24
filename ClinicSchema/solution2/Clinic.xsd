@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.example.org/shema/clinic"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.example.org/shema/clinic"
+	xmlns:pat="http://www.example.org/schema/clinic/patient"
+	xmlns:prov="http://www.example.org/schema/clinic/provider"
+	xmlns:pref="http://www.example.org/schema/clinic/treament">
+
+
+	<import schemaLocation="Patient.xsd"
+		namespace="http://www.example.org/schema/clinic/patient">
+	</import>
+	<import schemaLocation="Provider.xsd"
+		namespace="http://www.example.org/schema/clinic/provider">
+	</import>
+	<import schemaLocation="Treament.xsd" namespace="http://www.example.org/schema/clinic/treament"></import>
+	<complexType name="ClinicType">
+		<sequence>
+			<element ref="pat:Patient" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<element ref="prov:Provider" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<element name="Clinic" type="tns:ClinicType">
+		<key name="ProviderPrimaryKey">
+			<selector xpath="./prov:Provider"></selector>
+			<field xpath="prov:provider-id"></field>
+		</key>
+		<keyref name="TreatmentProviderForeignKey"
+			refer="tns:ProviderPrimaryKey">
+			<selector
+				xpath="./pat:Patient/pat:Treatment/pat:treatment">
+			</selector>
+			<field xpath="pref:provider-id"></field>
+		</keyref>
+	</element>
+
+</schema>

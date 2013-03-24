@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Provider"
+	xmlns:tns="http://www.example.org/Provider"
+	elementFormDefault="qualified" xmlns:clid="http://www.example.org/ClinicIds">
+	<import schemaLocation="ClinicIds.xsd" namespace="http://www.example.org/ClinicIds"></import>
+
+	<complexType name="ProviderType">
+		<sequence>
+			<element name="providerID" type="clid:ProviderId"></element>
+			<element name="dob" type="date"></element>
+			<element name="name" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>

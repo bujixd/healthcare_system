@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="providerDTO">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="npi" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="specilization" type="specialization" minOccurs="0"/>
+      <xs:element name="treatments" type="xs:long" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="specialization">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="surgery"/>
+      <xs:enumeration value="radiology"/>
+      <xs:enumeration value="oncology"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

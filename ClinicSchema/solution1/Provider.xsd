@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.example.org/schema/clinic/provider"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/schema/clinic/provider" xmlns:pref="http://www.example.org/schema/clinic/clinic_ids">
+	<import schemaLocation="ClinicIds.xsd" namespace="http://www.example.org/schema/clinic/clinic_ids"></import>
+
+	<complexType name="ProviderType">
+		<sequence>
+			<element name="provider-id" type="pref:ProvideIdType"></element>
+			<element name="name" type="string"></element>
+			<element name="specialization" type="tns:SpecializationType"></element>
+		</sequence>
+	</complexType>
+
+	<simpleType name="SpecializationType">
+		<restriction base="string">
+			<enumeration value="raidology"></enumeration>
+			<enumeration value="surgery"></enumeration>
+			<enumeration value="oncology"></enumeration>
+		</restriction>
+	</simpleType>
+
+    <element name="Provider" type="tns:ProviderType"></element>
+</schema>
